@@ -1,0 +1,23 @@
+/* bugSolution.css */
+
+/* Solution: Use parentheses to enforce correct order of operations */
+.element {
+  width: calc((50% - 20px) + 10%); /* Explicitly define calculation order */
+}
+
+/* Solution: Avoid mixing units whenever possible.  If you must, prioritize pixels and ems for greater consistency */
+.element2 {
+  width: calc(50vw - 20px); /* Use viewport width and pixels */
+}
+
+/* Solution for deep nesting: Simplify the calculation into multiple simpler CSS properties or use CSS variables/custom properties */
+:root {
+  --element-base-width: 50%;
+  --element-offset: 20px;
+}
+
+.element3 {
+  width: var(--element-base-width);
+  margin-left: calc(var(--element-offset) * -1);  /* Example of a simpler calc */
+}
+/* ...more efficient styles... */
